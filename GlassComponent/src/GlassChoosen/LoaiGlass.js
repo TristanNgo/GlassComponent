@@ -5,7 +5,7 @@ export default class LoaiGlass extends Component {
     return (
       <button
         className="btn btn-outline-secondary"
-        onClick={() => this.handleChangeGlass(MauGlass)}
+        onClick={() => this.props.handleChangeGlass(this.props.glass)}
       >
         <img
           src={this.props.glass.img}

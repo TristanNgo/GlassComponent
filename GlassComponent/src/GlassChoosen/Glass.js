@@ -68,7 +68,7 @@ export default class Glass extends Component {
     return this.MauGlass.map((glass, index) => {
       return (
         <div className="col-3">
-          <LoaiGlass glass={glass} />
+          <LoaiGlass glass={glass} handleChangeGlass={this.handleChangeGlass} />
         </div>
       );
     });
@@ -96,7 +96,7 @@ export default class Glass extends Component {
                     alt="hinh model"
                   />
                   <img
-                    src="./img/glassesImage/v4.png"
+                    src={this.state.glassDetail.img}
                     alt="kinh"
                     style={{
                       width: 170,
@@ -108,9 +108,11 @@ export default class Glass extends Component {
                   />
                   <div className="card-body">
                     <span className="card-title badge-danger h3 px-2 rounded">
-                      $30
+                      {this.state.glassDetail.price}
                     </span>
-                    <p className="card-text mt-2">DIOR D6005U</p>
+                    <p className="card-text mt-2">
+                      {this.state.glassDetail.name}
+                    </p>
                   </div>
                 </div>
               </section>
